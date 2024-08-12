@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React from 'react'
 import { useEffect, useState } from 'react'
-
+import { useNavigate } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip'
 
 function Home() {
   const [isFlipped,setisFlipped] = useState(false);
   const [data,setdata] = useState([{}]);
   const [index,setindex] = useState(0);
+  const navigator = useNavigate();
 
   useEffect(()=>{
     fetch('https://tuf-sopa.onrender.com/questions')
@@ -38,9 +39,10 @@ function Home() {
 
 
   return (
+    <div>
         <main className='container'>
             <div className='text'>
-                <h4>Please visit /admin to Add, delete or update values</h4>
+                <h4>Please Click on <button className='adminbutton' onClick={()=> navigator('/admin')}>Admin Page</button> button to Add, delete or update values</h4>
             </div>
             <button className='button1' onClick={handleprevious}>Prev</button>
             <div className='card'>
@@ -58,6 +60,7 @@ function Home() {
             </div>
             <button className='button2' onClick={handlenext}>Next</button>
         </main>
+        </div>
   )
 }
 

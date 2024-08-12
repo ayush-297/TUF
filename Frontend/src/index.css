@@ -82,7 +82,17 @@
   transform: translateY(4px);
 }
 
+.adminbutton:active {
+  background-color: slategray;
+  box-shadow: none;
+  transform: translateY(4px);
+}
 
+.adminbutton:active {
+  background-color: slategray;
+  box-shadow: none;
+  transform: translateY(4px);
+}
 
 
 
@@ -111,5 +121,23 @@
   border-radius: 20px;
   box-shadow: 2px 2px;
   background: grey;
+}
+
+.adminbutton{
+  flex-direction: column;
+  display: inline-block;
+  padding: 1px 2px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color:grey;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
