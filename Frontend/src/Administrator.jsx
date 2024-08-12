@@ -10,7 +10,7 @@ function Administrator() {
 
     useEffect(() => {
         async function getData() {
-            await axios.get('http://localhost:8080/questions')
+            await axios.get('https://tuf-sopa.onrender.com/questions')
                 .then(res => setdata(res.data))
                 .catch(err => console.log(err))
         }
@@ -21,7 +21,7 @@ function Administrator() {
 
 
     const handledelete = (id) => {
-        axios.delete('http://localhost:8080/delete/' + id)
+        axios.delete('https://tuf-sopa.onrender.com/delete/' + id)
             .then(res => {
                 window.location.reload();
             }).catch(err => console.log(err));

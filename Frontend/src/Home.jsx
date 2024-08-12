@@ -10,7 +10,7 @@ function Home() {
   const [index,setindex] = useState(0);
 
   useEffect(()=>{
-    fetch('http://localhost:8080/questions')
+    fetch('https://tuf-sopa.onrender.com/questions')
     .then(res => res.json())
     .then(data => setdata(data))
     .catch(err => console.log(err));

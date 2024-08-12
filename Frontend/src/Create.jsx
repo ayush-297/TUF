@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
     const navigate = useNavigate();
     const handlesubmit = (e) =>{
         e.preventDefault();
-        axios.post('http://localhost:8080/newquestion',values)
+        axios.post('https://tuf-sopa.onrender.com/newquestion',values)
         .then(res => {
             console.log(res)
             navigate('/admin');

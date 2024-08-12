@@ -15,7 +15,7 @@ function Update() {
 
     const handleupdate = (event)=>{
         event.preventDefault();
-        axios.put('http://localhost:8080/update/'+id,values)
+        axios.put('https://tuf-sopa.onrender.com/update/'+id,values)
         .then(res => {
            console.log(res)
            navigate('/admin')
