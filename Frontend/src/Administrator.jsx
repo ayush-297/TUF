@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function Administrator() {
     const [data, setdata] = useState([{}]);
+    const navigator = useNavigate();
 
     useEffect(() => {
         async function getData() {
@@ -23,7 +25,7 @@ function Administrator() {
     const handledelete = (id) => {
         axios.delete('https://tuf-sopa.onrender.com/delete/' + id)
             .then(res => {
-                window.location.reload();
+                navigator('/')
             }).catch(err => console.log(err));
     }
 
