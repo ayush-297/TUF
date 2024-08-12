@@ -13,7 +13,7 @@ function Home() {
     fetch('http://localhost:8080/questions')
     .then(res => res.json())
     .then(data => setdata(data))
-    .catch(err => console.log(error));
+    .catch(err => console.log(err));
   },[])
 
   function handleflip(){

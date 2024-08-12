@@ -3,10 +3,13 @@ import {getquestions,delquestion,createQuestion, updateQuestion} from './databas
 const app = express();
 import cors from 'cors'
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin : true,
+    credentials : true,
+}));
 
 
-
+const PORT = process.env.PORT || 8080
 
 app.get("/questions",async (req,res)=>{
     const questions = await getquestions();
@@ -20,8 +23,8 @@ app.delete("/delete/:id",async(req,res)=>{
 })
 
 
-app.put('/update/:id',(req,res)=>{
-    const result = updateQuestion(req.params.id,req.body.question,req.body.answer);
+app.put('/update/:id',async (req,res)=>{
+    const result = await updateQuestion(req.params.id,req.body.question,req.body.answer);
     res.send(result);
 })
 
@@ -38,6 +41,6 @@ app.use((err, req, res, next) => {
   })
 
 
-app.listen(8080,()=>{
+app.listen(PORT,()=>{
     console.log("Listening on port 8080");
 })
