@@ -29,9 +29,19 @@ function Home() {
   }
   function handlenext(){
     if(index+1<data.length)
+    {
       setindex(index => index+1);
+      if(isFlipped===true)
+        setisFlipped(false);
+    }
+      
     else
+    {
       setindex(0);
+      if(isFlipped===true)
+        setisFlipped(false);
+    }
+      
   }
 
 
